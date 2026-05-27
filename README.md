@@ -9,6 +9,9 @@
 
  ### Data Pipeline Architecture
 
+ <img width="820" height="401" alt="Animation" src="https://github.com/user-attachments/assets/02ef15d0-06dd-41ed-af94-def872b454b6" />
+
+
  ### Business Understanding
 
  MarketPulse Analytics is a financial services firm based in New York City, specializing in real-time stock market analysis, financial forecasting, and trading strategy optimization. 
