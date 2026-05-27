@@ -1,0 +1,4 @@
+.env
+__pycache__
+requirements.txt
+stock_data_logs.log
