@@ -8,7 +8,6 @@
  [**Data Source** ](https://rapidapi.com/alphavantage/api/alpha-vantage/playground/apiendpoint_55220bb2-8a64-4cde-89e1-87ec00947f57)
 
  ### Data Pipeline Architecture
- ![Data Pipeline Architecture](./_img/real_time_pipeline.png)
 
  ### Business Understanding
 
@@ -41,43 +40,19 @@
   - `Power BI → External (connects to Postgres database).`
 
  ## Project Setup
- ### Clone The Repository
-  ```bash
-    # Clone the repository
-    git clone https://github.com/ioaviator/Real-Time-Stock-Market-Analysis.git
-
-    # Navigate to project directory
-    cd Real-Time-Stock-Market-Analysis
-  ```
 
   ### Setup Environment Variables
-  ```bash
-    # Create a .env file in project root directory
+  
+  # Create a .env file in project root directory
 
-    ## get your API key from the api data source mentioned above
-    API_KEY=ADD API KEY
-    POSTGRES_USER=admin
-    POSTGRES_PASSWORD=admin
-    PGADMIN_DEFAULT_EMAIL=sample@admin.com
-    PGADMIN_DEFAULT_PASSWORD=admin
-  ```
-
+  ## get your API key from the api data source mentioned above
+  
   ### Create And Activate The Virtual Environment
-  ```bash
-    python -m venv venv
-    source venv/Scripts/activate
-  ```
-
+  
   ### Install Project Dependencies
-  ```bash
-    pip install -r requirements.txt
-  ```
-
+  
   ### Run The Docker Services
-  ```bash
-    docker compose up -d
-  ```
-
+  
   ### Connect To The Postgresql Database Server From Pgadmin
   ### Connect To Kafka Server From The Kafka Client 
   ```bash
@@ -87,38 +62,21 @@
     ## kafka-ui 
     localhost:8085
   ```
-  <br>
-
-  ### Postgres Login From Pgadmin
-  ![Postgres Login](./_img/postgres_server_register.png)
-  
-  ### Kafka Login From Kafka UI
-  ![Kafka Login](./_img/kafka_login.png)
+    ### Postgres Login From Pgadmin
+ 
+    ### Kafka Login From Kafka UI
 
   ### Run The Python Producer Script To Send Data To Kafka
-  ```bash
-    python producer/main.py
-
-    ## Login to the kafka ui client to see the messages pushed to kafka: ( topic name - stock_analysis )
-  ```
-
+  
   ### Inspect The Consumer Script: Read Data From Kafka And Load To Postgres
-  ```bash
-    ## Login to Docker Desktop, locate the name of the project container, expand it and click on the consumer service  (Inspect the logs). This is now sending data to your postgres database
-
-    ## Login to the pgadmin client and check the messages now streamed into the (stock_data:stocks) database table. 
-    ## You need to run the `SELECT * FROM Table` query
-  ```
-
+ 
+  ## Login to the pgadmin client and check the messages now streamed into the (stock_data:stocks) database table. 
+  ## You need to run the `SELECT * FROM Table` query
+  
   ### Connect Power BI To Postgres
-  ![Power BI Login](./_img/power_bi_connection.png)
-
 
   ### Shut Down Server
-  ```bash
-    docker compose down -v
-  ```
-
-  ### Further Additions
+  
+   ### Further Additions
   - Observability and Monitoring of system pipelines
   - Data Processing using Kafka Streams 
